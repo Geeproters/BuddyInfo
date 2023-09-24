@@ -20,10 +20,17 @@ public class AddressBook {
         return null;
     }
 
+    public int getIndex(AddressBook this, BuddyInfo buddy) {
+        return this.buddyList.indexOf(buddy);
+    }
+
     public static void main(String[] args) {
         BuddyInfo buddy = new BuddyInfo("Peter","Carleton","613");
         AddressBook addressBook = new AddressBook();
         addressBook.addBuddy(buddy);
+
+        System.out.println("Index from getIndex(): " + addressBook.getIndex(buddy));
+
         System.out.println(addressBook.buddyList.indexOf(buddy)); //This line was added on GitHub.com
         System.out.println(addressBook.removeBuddy(0).getName());
     }
